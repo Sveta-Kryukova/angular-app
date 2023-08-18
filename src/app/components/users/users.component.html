@@ -2,17 +2,22 @@
   <thead>
     <tr class="users-table__header-row">
       <th class="users-table__header-cell">ID</th>
-      <th class="users-table__header-cell" (click)="sort('name')">Name</th>
+      <th 
+        class="users-table__header-cell users-table__header-cell__name" 
+        (click)="sort('name')"
+      >
+        Name<span>{{ isSortAscending ? ' ▼' : ' ▲' }}</span>
+      </th>
       <th class="users-table__header-cell">Permissions</th>
-      <th class="users-table__header-cell">Date</th>
+      <th class="users-table__header-cell">Datec</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of users" class="users-table__data-row">
-      <td class="users-table__data-cell">{{ user.id }}</td>
-      <td class="users-table__data-cell" (click)="naviateToUser(user.id)">{{ user.name }}</td>
+      <td class="users-table__data-cell users-table__data-cell--center">{{ user.id }}</td>
+      <td class="users-table__data-cell users-table__data-cell--center users-table__data-cell__name" (click)="naviateToUser(user.id)">{{ user.name }}</td>
       <td class="users-table__data-cell">{{ user.permissions.join(', ') }}</td>
-      <td class="users-table__data-cell">{{ user.date }}</td>
+      <td class="users-table__data-cell users-table__data-cell--center">{{ user.date }}</td>
     </tr>
   </tbody>
 </table>
