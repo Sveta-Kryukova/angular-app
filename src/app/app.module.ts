@@ -26,8 +26,6 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     BrowserModule,
-    AppRoutingModule,
-    BrowserModule,
     FormsModule
   ],
   providers: [],
