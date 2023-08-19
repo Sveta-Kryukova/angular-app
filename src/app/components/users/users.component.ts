@@ -27,7 +27,14 @@ export class UsersComponent {
     }
   
     this.users.sort((a, b) => {
-      return this.isSortAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+      if (column === 'name') {
+        return this.isSortAscending ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
+      } else if (column === 'id') {
+        return this.isSortAscending ? a.id - b.id : b.id - a.id;
+      } else if (column === 'date') {
+        return this.isSortAscending ? new Date(a.date).getTime() - new Date(b.date).getTime() : new Date(b.date).getTime() - new Date(a.date).getTime();
+      }
+      return 0;
     });
   }
 

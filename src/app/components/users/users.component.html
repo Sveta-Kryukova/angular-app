@@ -2,7 +2,9 @@
 <table class="users-table">
   <thead>
     <tr class="users-table__header-row">
-      <th class="users-table__header-cell">ID</th>
+      <th class="users-table__header-cell users-table__header-cell__id" (click)="sort('id')">
+        ID<span>{{ isSortAscending && currentSortColumn === 'id' ? ' ▼' : ' ▲' }}</span>
+      </th>
       <th 
         class="users-table__header-cell users-table__header-cell__name" 
         (click)="sort('name')"
@@ -10,7 +12,9 @@
         Name<span>{{ isSortAscending ? ' ▼' : ' ▲' }}</span>
       </th>
       <th class="users-table__header-cell">Permissions</th>
-      <th class="users-table__header-cell">Date</th>
+      <th class="users-table__header-cell users-table__header-cell__date" (click)="sort('date')">
+        Date<span>{{ isSortAscending && currentSortColumn === 'date' ? ' ▼' : ' ▲' }}</span>
+      </th>
     </tr>
   </thead>
   <tbody>

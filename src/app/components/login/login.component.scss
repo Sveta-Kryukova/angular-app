@@ -85,4 +85,14 @@
           background-color: #005f19;
       }
   }
+
+  &__error {
+      width: 100%;
+      display: block;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 5px;
+      color: red;
+  }
 }
