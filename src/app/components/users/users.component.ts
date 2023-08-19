@@ -1,4 +1,3 @@
-//users.component.ts
 import { Component } from '@angular/core';
 import { User } from '../single-user/single-user.model';
 import { Router } from '@angular/router';

@@ -18,7 +18,7 @@ export class SingleUserComponent implements OnInit {
   
   ngOnInit() {
     const userId = parseInt(this.route.snapshot.paramMap.get('id')!);
-    this.user = this.userService.users.find(u => u.id === userId) ?? null;
+    this.user = this.userService.getUserById(userId) ?? null;
   }
 
   goBack() {
