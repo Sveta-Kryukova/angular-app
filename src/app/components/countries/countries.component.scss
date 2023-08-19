@@ -1,0 +1,19 @@
+.countries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 10px;
+
+  &__title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  &__message {
+    text-align: center;
+    font-size: 16px;
+  }
+}

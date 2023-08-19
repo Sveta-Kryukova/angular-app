@@ -1,9 +1,9 @@
 <div *ngIf="user" class="user-details">
   <h2 lass="user-details__title">User Details</h2>
-  <p class="user-details__info"><strong class="user-details__label">ID:</strong> {{ user.id }}</p>
-  <p class="user-details__info"><strong class="user-details__label">Name:</strong> {{ user.name }}</p>
-  <p class="user-details__info"><strong class="user-details__label">Permissions:</strong> {{ user.permissions.join(', ') }}</p>
-  <p class="user-details__info"><strong class="user-details__label">Date:</strong> {{ user.date }}</p>
+  <p class="user-details__info"><span [ngStyle]="{ 'font-weight': 'bold' }">ID:</span> {{ user.id }}</p>
+  <p class="user-details__info"><span [ngStyle]="{ 'font-weight': 'bold' }">Name:</span> {{ user.name }}</p>
+  <p class="user-details__info"><span [ngStyle]="{ 'font-weight': 'bold' }">Permissions:</span> {{ user.permissions.join(', ') }}</p>
+  <p class="user-details__info"><span [ngStyle]="{ 'font-weight': 'bold' }">Date:</span> {{ user.date }}</p>
 </div>
 <div *ngIf="!user" class="user-details__not-found">
   <h2 lass="user-details__title">User not found 😞</h2>

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { User } from '../single-user/single-user.model';
+import { User } from '../models/single-user.model';
+import { users } from 'src/app/data/users';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private localStorageKey = 'user_data';
-  private users: User[] = [];
+  private users: User[] = users;
 
   constructor() {
     this.loadsUsersFromLocalStorage();
@@ -17,14 +18,8 @@ export class UserService {
     if (storedData) {
       this.users = JSON.parse(storedData);
     } else {
-      this.users = [
-    { id: 1, name: 'User 1', permissions: ['read'], date: '2023-08-17' },
-    { id: 2, name: 'User 2', permissions: ['read', 'write'], date: '2023-08-17' },
-    { id: 3, name: 'User 3', permissions: ['read', 'write', 'delete'], date: '2023-08-17' },
-    { id: 4, name: 'User 4', permissions: ['read', 'write', 'delete', 'create'], date: '2023-08-17' },
-    { id: 5, name: 'User 5', permissions: ['read', 'write', 'delete', 'create', 'update'], date: '2023-08-17' }
-  ];
-  this.saveUserData();
+      this.users = users;
+      this.saveUserData();
   }
 }
 
